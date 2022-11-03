@@ -1,6 +1,7 @@
 import "./App.css";
 import { useAppSelector } from "./store/customHooks"; // Кастомный хук редакса для управления состоянием
 import ToggleTheme from "./components/ToggleTheme"; // Компонент переключатель темы
+import InputTask from "./components/InputTask"; // Компонент поле для ввода текста задачи
 
 export default function App() {
   const theme = useAppSelector((state) => state.app.theme); // Состояние темы
@@ -12,6 +13,7 @@ export default function App() {
     >
       TODO LIST
       <ToggleTheme />
+      <InputTask/>
     </div>
   );
 
