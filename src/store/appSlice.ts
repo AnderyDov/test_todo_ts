@@ -47,18 +47,18 @@ const appSlice = createSlice({
       });
     },
     // Изменяет задачу по принятому ID и тексту
-    changeTask(state, action) {
+    changeTask(state, action: PayloadAction<{ id: string; text: string }>) {
       state.list.map((el) => {
-        if (el.id === action.payload.idString) {
-          el.text = action.payload.textString;
+        if (el.id === action.payload.id) {
+          el.text = action.payload.text;
         }
         return el;
       });
     },
     // Изменяет статус задача
-    changeStatus(state, action) {
+    changeStatus(state, action: PayloadAction<string>) {
       state.list.map((el) => {
-        if (el.id === action.payload.idString) {
+        if (el.id === action.payload) {
           el.status = !el.status;
         }
         return el;
