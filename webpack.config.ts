@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import HtmlWebpackPlugin = require("html-webpack-plugin");
+import HtmlWebpackPlugin from "html-webpack-plugin";
 import { ProgressPlugin } from "webpack";
 import { DefinePlugin } from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
