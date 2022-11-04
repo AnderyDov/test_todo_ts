@@ -6,15 +6,15 @@ export default function InputTask() {
   const dispatch = useAppDispatch();
 
   // Функция добавления новой задачи, срабатывае при потере фокуса
-  function addNewTask(e:React.FocusEvent<HTMLInputElement>):void  {
+  function addNewTask(e: React.FocusEvent<HTMLInputElement>): void {
     if (e.target.value !== "") {
-      dispatch(addTask( e.target.value));
+      dispatch(addTask(e.target.value));
     }
     e.target.value = "";
   }
 
   // Функция сбрасввания фокуса с инпута по нажатию "Enter"
-  function addTaskPressEnter(e:React.KeyboardEvent< HTMLInputElement>):void {
+  function addTaskPressEnter(e: React.KeyboardEvent<HTMLInputElement>): void {
     if (e.key === "Enter") {
       e.currentTarget.blur();
     }

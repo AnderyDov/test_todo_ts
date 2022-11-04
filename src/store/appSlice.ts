@@ -65,7 +65,7 @@ const appSlice = createSlice({
       });
     },
     // Удаляет выполненные задачи
-    clearCompleted(state, action) {
+    clearCompleted(state) {
       state.list = state.list.filter((el) => {
         return el.status === false;
       });

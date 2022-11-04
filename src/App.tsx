@@ -14,8 +14,8 @@ export default function App() {
     >
       TODO LIST
       <ToggleTheme />
-      <InputTask/>
-      <List/>
+      <InputTask />
+      <List />
     </div>
   );
 
