@@ -11,6 +11,7 @@ export default function App() {
     <div
       className="flex flex-col h-full items-center p-10"
       data-theme={theme ? "luxury" : "fantasy"}
+      data-testid="t"
     >
       TODO LIST
       <ToggleTheme />
