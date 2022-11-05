@@ -1,10 +1,10 @@
 export interface BuildEnv {
-  mode: "production" | "development";
+  mode: 'production' | 'development';
   port: number;
 }
 
 export interface Config {
-  mode: "production" | "development";
+  mode: 'production' | 'development';
   entry: string;
   output: {
     filename: string;
@@ -48,6 +48,6 @@ export interface Config {
     preferAbsolute: boolean;
     modules: string[];
     mainFiles: string[];
-    alias: {};
+    alias: unknown;
   };
 }

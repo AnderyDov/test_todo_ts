@@ -1,10 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit"; // Хук редакса для настройки хранилища
-import appReducer from "./appSlice"; // Слайз для состояния приложения
+import { configureStore } from '@reduxjs/toolkit'; // Хук редакса для настройки хранилища
+import appReducer from './appSlice'; // Слайз для состояния приложения
 
 const store = configureStore({
-  reducer: {
-    app: appReducer
-  }
+    reducer: {
+        app: appReducer
+    }
 });
 
 export default store;
