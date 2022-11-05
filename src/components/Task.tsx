@@ -40,7 +40,7 @@ export default function Task({ id, text, status, filter }: Prop) {
   function saveText(e: React.FocusEvent<HTMLInputElement> | any) {
     let t = e.currentTarget;
     dispatch(changeTask({ id: t.dataset.id, text: t.value }));
-    console.log(t.value);
+    // console.log(t.value);
     e.currentTarget.parentElement.innerHTML = t.value;
   }
 
@@ -50,6 +50,7 @@ export default function Task({ id, text, status, filter }: Prop) {
         className="w-5 h-5 mr-2 rounded-full outline outline-1 p-1  cursor-pointer"
         data-id={id}
         onClick={changeStatusFunc}
+        data-testid="status"
       >
         {status === true && <SvgComponent name="ok" />}
       </div>

@@ -10,6 +10,10 @@ describe("appSlice reduser testings", () => {
   test("setTheme change store app theme", () => {
     store.dispatch(actions.setTheme(true));
     expect(store.getState().app.theme).toBeTruthy();
+    store.dispatch(actions.setTheme(false));
+    expect(store.getState().app.theme).toBeFalsy();
+    store.dispatch(actions.setTheme(true));
+    expect(store.getState().app.theme).toBeTruthy();
   });
 
   test("addTask added new task object in todo list", () => {

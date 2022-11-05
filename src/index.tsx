@@ -1,13 +1,13 @@
-import "./index.css"
-import App  from './App';
-import { render } from 'react-dom';
-import {Provider} from 'react-redux';
-import store from './store/store';
-
+import "./index.css";
+import App from "./App";
+/* istanbul ignore file */
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 render(
-   <Provider store={store}>
+  <Provider store={store}>
     <App />
   </Provider>,
-    document.getElementById('root') as HTMLElement,
+  document.getElementById("root") as HTMLElement
 );

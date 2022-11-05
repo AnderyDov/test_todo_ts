@@ -26,7 +26,10 @@ export default function List() {
   });
 
   let out = (
-    <div className="w-6/12 min-w-[500px]  mt-7 border rounded-md">
+    <div
+      className="w-6/12 min-w-[500px]  mt-7 border rounded-md"
+      data-testid="list"
+    >
       <ol>{showList}</ol>
       <ButtonsPanel />
     </div>
