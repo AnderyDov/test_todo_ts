@@ -1,6 +1,6 @@
-import { useAppDispatch, useAppSelector } from "../store/customHooks"; // Хуки редакса
-import { clearCompleted, changeFilter } from "../store/appSlice"; // Редюсеры  для фильтрации и удаления выполненных щадач
-import React from "react";
+import { useAppDispatch, useAppSelector } from '../store/customHooks'; // Хуки редакса
+import { clearCompleted, changeFilter } from '../store/appSlice'; // Редюсеры  для фильтрации и удаления выполненных щадач
+import React from 'react';
 
 export default function ButtonsPanel() {
   const dispatch = useAppDispatch();
@@ -17,40 +17,40 @@ export default function ButtonsPanel() {
     dispatch(changeFilter(e.currentTarget.dataset.title));
   }
 
-  let out = (
-    <div className="flex justify-around my-1">
-      <div className="flex items-center">{count} items</div>
-      <div className="btn-group">
+  const out = (
+    <div className='flex justify-around my-1'>
+      <div className='flex items-center'>{count} items</div>
+      <div className='btn-group'>
         <input
-          type="radio"
-          name="options"
-          data-title="all"
-          checked={filter === "all" ? true : false}
+          type='radio'
+          name='options'
+          data-title='all'
+          checked={filter === 'all' ? true : false}
           onChange={changeFilterFunc}
-          className="btn btn-ghost btn-sm text-[10px]"
-          value="All"
+          className='btn btn-ghost btn-sm text-[10px]'
+          value='All'
         />
         <input
-          type="radio"
-          name="options"
-          data-title="active"
+          type='radio'
+          name='options'
+          data-title='active'
           onChange={changeFilterFunc}
-          checked={filter === "active" ? true : false}
-          className="btn btn-ghost btn-sm text-[10px]"
-          value="Active"
+          checked={filter === 'active' ? true : false}
+          className='btn btn-ghost btn-sm text-[10px]'
+          value='Active'
         />
         <input
-          type="radio"
-          name="options"
-          data-title="completed"
+          type='radio'
+          name='options'
+          data-title='completed'
           onChange={changeFilterFunc}
-          checked={filter === "completed" ? true : false}
-          className="btn btn-ghost btn-sm text-[10px]"
-          value="Completed"
+          checked={filter === 'completed' ? true : false}
+          className='btn btn-ghost btn-sm text-[10px]'
+          value='Completed'
         />
       </div>
       <button
-        className="btn btn-ghost btn-sm text-[10px]"
+        className='btn btn-ghost btn-sm text-[10px]'
         onClick={clearCompletedFunc}
       >
         Clear completed

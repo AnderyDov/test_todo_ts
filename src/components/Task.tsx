@@ -1,6 +1,6 @@
-import { useAppDispatch } from "../store/customHooks"; // Хуки редакса
-import SvgComponent from "../components/SvgComponent"; // Компонент для отрисовки SVG картинок
-import { delTask, changeTask, changeStatus } from "../store/appSlice"; // Редюсеры управления состоянием приложения
+import { useAppDispatch } from '../store/customHooks'; // Хуки редакса
+import SvgComponent from '../components/SvgComponent'; // Компонент для отрисовки SVG картинок
+import { delTask, changeTask, changeStatus } from '../store/appSlice'; // Редюсеры управления состоянием приложения
 
 interface Prop {
   id: string;
@@ -24,45 +24,46 @@ export default function Task({ id, text, status, filter }: Prop) {
 
   // Фукнция вставляет инпут для редактирования задачи, вешает на него событие потери фокуса
   function startChangeTaskText(e: React.MouseEvent<HTMLSpanElement>): void {
-    let t = e.currentTarget;
+    const t = e.currentTarget;
     if (t.children.length === 0) {
-      let inp = document.createElement("input");
-      inp.classList.add("input", "input-bordered", "input-sm");
+      const inp = document.createElement('input');
+      inp.classList.add('input', 'input-bordered', 'input-sm');
       inp.value = t.textContent;
-      t.innerHTML = "";
+      t.innerHTML = '';
       t.append(inp);
       inp.focus();
-      inp.addEventListener("blur", saveText);
+      inp.addEventListener('blur', saveText);
     }
   }
 
   // Функция для сохранентя текста,срабаывает по потери фокуса
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function saveText(e: React.FocusEvent<HTMLInputElement> | any) {
-    let t = e.currentTarget;
+    const t = e.currentTarget;
     dispatch(changeTask({ id: t.dataset.id, text: t.value }));
     // console.log(t.value);
     e.currentTarget.parentElement.innerHTML = t.value;
   }
 
-  let out = (
-    <li className="relative m-4   border-b-[0.5px] flex items-center">
+  const out = (
+    <li className='relative m-4   border-b-[0.5px] flex items-center'>
       <div
-        className="w-5 h-5 mr-2 rounded-full outline outline-1 p-1  cursor-pointer"
+        className='w-5 h-5 mr-2 rounded-full outline outline-1 p-1  cursor-pointer'
         data-id={id}
         onClick={changeStatusFunc}
-        data-testid="status"
+        data-testid='status'
       >
-        {status === true && <SvgComponent name="ok" />}
+        {status === true && <SvgComponent name='ok' />}
       </div>
       <span
-        className="flex items-center overflow-hidden max-w-[70%]  cursor-pointer"
+        className='flex items-center overflow-hidden max-w-[70%]  cursor-pointer'
         onClick={startChangeTaskText}
         data-id={id}
       >
         {text}
       </span>
       <button
-        className="absolute btn btn-xs btn-ghost text-[10px] flex self-center right-0  cursor-pointer"
+        className='absolute btn btn-xs btn-ghost text-[10px] flex self-center right-0  cursor-pointer'
         data-id={id}
         onClick={deleteItem}
       >
@@ -71,13 +72,13 @@ export default function Task({ id, text, status, filter }: Prop) {
     </li>
   );
 
-  if (filter === "completed" && status === true) {
+  if (filter === 'completed' && status === true) {
     return out;
   }
-  if (filter === "active" && status === false) {
+  if (filter === 'active' && status === false) {
     return out;
   }
-  if (filter === "all") {
+  if (filter === 'all') {
     return out;
   }
 }
