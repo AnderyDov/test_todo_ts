@@ -18,7 +18,7 @@ export default (env: BuildEnv) => {
       filename: '[name].[contenthash].js',
       path: resolve(__dirname, './build'),
       clean: true,
-      publicPath: '/public',
+      publicPath: '/',
       pathinfo: false
     },
 

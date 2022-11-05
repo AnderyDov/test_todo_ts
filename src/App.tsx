@@ -3,6 +3,7 @@ import { useAppSelector } from './store/customHooks'; // Кастомный ху
 import ToggleTheme from './components/ToggleTheme'; // Компонент переключатель темы
 import InputTask from './components/InputTask'; // Компонент поле для ввода текста задачи
 import List from './components/List'; // Компонент отбражающий список задач
+import LinkToGithub from './components/LInkToGithub'; // Компонент ссылка на git репозиторий проекта
 
 export default function App() {
   const theme = useAppSelector((state) => state.app.theme); // Состояние темы
@@ -17,6 +18,7 @@ export default function App() {
       <ToggleTheme />
       <InputTask />
       <List />
+      <LinkToGithub />
     </div>
   );
 
